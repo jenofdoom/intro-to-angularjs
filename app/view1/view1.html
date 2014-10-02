@@ -1,8 +1,16 @@
 <p><a ng-click="hideAuthors = true">Hide authors</a><p>
 
+<p><label>Search:
+    <input type="search" value="" ng-model="userInput">
+</label></p>
+
+<p>Searched for: {{ userInput }}</p>
+
+<p ng-show="(articles | filter:userInput).length == 0"><em>No articles found.</em></p>
+
 <ul class='articles'>
     <li
-       ng-repeat='article in articles | limitTo:5'
+       ng-repeat='article in articles | filter:userInput'
        ng-class='{archived:article.archived}'
     >
          <img ng-src="{{ article.icon }}"><br>
