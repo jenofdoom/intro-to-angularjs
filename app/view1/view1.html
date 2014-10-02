@@ -2,11 +2,11 @@
 
 <ul class='articles'>
     <li
-       ng-repeat='article in articles'
+       ng-repeat='article in articles | limitTo:5'
        ng-class='{archived:article.archived}'
     >
-        <img ng-src="{{ article.icon }}"><br>
-        “{{ article.title }}”
-        <span ng-show='!hideAuthors'> by {{ article.authors }}</span>
+         <img ng-src="{{ article.icon }}"><br>
+         “{{ article.title }}”
+         <span ng-show='!hideAuthors'>by {{ article.authors }}</span>
     </li>
 </ul>
