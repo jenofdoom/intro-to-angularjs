@@ -37,3 +37,17 @@
   list-style-type:none;
   margin-bottom:20px;
 }
+
+.articles {
+  padding-left:0;
+}
+
+a[ng-click] {
+  color:blue;
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+body {
+  padding:20px;
+}
