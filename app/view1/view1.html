@@ -1,9 +1,12 @@
+<p><a ng-click="hideAuthors = true">Hide authors</a><p>
+
 <ul class='articles'>
     <li
        ng-repeat='article in articles'
        ng-class='{archived:article.archived}'
     >
         <img ng-src="{{ article.icon }}"><br>
-        “{{ article.title }}” by {{ article.authors }}
+        “{{ article.title }}”
+        <span ng-show='!hideAuthors'> by {{ article.authors }}</span>
     </li>
 </ul>
