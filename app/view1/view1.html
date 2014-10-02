@@ -1,8 +1,8 @@
 <ul>
     <li
        ng-repeat='article in articles'
-       ng-show='!article.archived'
+       ng-class='{archived:article.archived}'
     >
-        “{{ article.title }}” by {{ article.authors }}
+         “{{ article.title }}” by {{ article.authors }}
     </li>
 </ul>
