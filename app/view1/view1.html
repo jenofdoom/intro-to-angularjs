@@ -1,8 +1,9 @@
-<ul>
+<ul class='articles'>
     <li
        ng-repeat='article in articles'
        ng-class='{archived:article.archived}'
     >
-         “{{ article.title }}” by {{ article.authors }}
+        <img ng-src="{{ article.icon }}"><br>
+        “{{ article.title }}” by {{ article.authors }}
     </li>
 </ul>
