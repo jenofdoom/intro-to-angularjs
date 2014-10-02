@@ -9,6 +9,10 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope) {
-    $scope.test = 'world';
+.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
+
+    $http.get('articles.json').success(function(data) {
+        $scope.articles = data;
+    });
+
 }]);
