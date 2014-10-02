@@ -13,4 +13,12 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $scope.articles = Articles.query();
 
+    $scope.alphabetical = true;
+    $scope.sortOrder =  function(isAlphabetical) {
+        if (isAlphabetical) {
+            return ['title', 'published'];
+        }
+        return ['-title', '-published'];
+    };
+
 }]);

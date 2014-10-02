@@ -8,9 +8,13 @@
 
 <p ng-show="(articles | filter:userInput).length == 0"><em>No articles found.</em></p>
 
+<p>
+    <a ng-click="alphabetical = !alphabetical">Change sort order</a>
+<p>
+
 <ul class='articles'>
     <li
-       ng-repeat='article in articles | filter:userInput'
+       ng-repeat='article in articles | orderBy:sortOrder(alphabetical) | filter:userInput'
        ng-class='{archived:article.archived}'
     >
          <img ng-src="{{ article.icon }}"><br>
