@@ -1,3 +1,5 @@
-<pre>
-    {{ articles | json }}
-</pre>
+<ul>
+    <li ng-repeat='article in articles'>
+        “{{ article.title }}” by {{ article.authors }}
+    </li>
+</ul>
