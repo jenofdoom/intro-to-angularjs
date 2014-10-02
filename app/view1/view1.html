@@ -19,6 +19,6 @@
     >
          <img ng-src="{{ article.icon }}"><br>
          “{{ article.title }}”
-         <span ng-show='!hideAuthors'>by {{ article.authors }}</span>
+         <span ng-show='!hideAuthors'>by {{ article.authors | authorList }}</span>
     </li>
 </ul>
