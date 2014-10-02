@@ -1,5 +1,8 @@
 <ul>
-    <li ng-repeat='article in articles'>
+    <li
+       ng-repeat='article in articles'
+       ng-show='!article.archived'
+    >
         “{{ article.title }}” by {{ article.authors }}
     </li>
 </ul>
