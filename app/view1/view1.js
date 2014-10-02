@@ -9,10 +9,8 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
+.controller('View1Ctrl', ['$scope', 'Articles', function($scope, Articles) {
 
-    $http.get('articles.json').success(function(data) {
-        $scope.articles = data;
-    });
+    $scope.articles = Articles.query();
 
 }]);
