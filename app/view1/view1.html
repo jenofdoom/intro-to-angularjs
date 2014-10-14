@@ -17,8 +17,6 @@
        ng-repeat='article in articles | orderBy:sortOrder(alphabetical) | filter:userInput'
        ng-class='{archived:article.archived}'
     >
-         <img ng-src="{{ article.icon }}"><br>
-         “{{ article.title }}”
-         <span ng-show='!hideAuthors'>by {{ article.authors | authorList }}</span>
+        <article>
     </li>
 </ul>
