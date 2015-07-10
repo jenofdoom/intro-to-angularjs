@@ -1,4 +1,4 @@
-<p><a ng-click="hideAuthors = true">Hide authors</a><p>
+<p><button ng-click="hideAuthors = true">Hide authors</button><p>
 
 <p><label>Search:
     <input type="search" value="" ng-model="userInput.authors">
@@ -9,7 +9,7 @@
 <p ng-show="(articles | filter:userInput).length == 0"><em>No articles found.</em></p>
 
 <p>
-    <a ng-click="alphabetical = !alphabetical">Change sort order</a>
+    <button ng-click="alphabetical = !alphabetical">Change sort order</button>
 <p>
 
 <ul class='articles'>
