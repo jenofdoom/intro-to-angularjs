@@ -1,10 +1,10 @@
 <p><a ng-click="hideAuthors = true">Hide authors</a><p>
 
 <p><label>Search:
-    <input type="search" value="" ng-model="userInput">
+    <input type="search" value="" ng-model="userInput.authors">
 </label></p>
 
-<p>Searched for: {{ userInput }}</p>
+<p>Searched for: {{ userInput.authors }}</p>
 
 <p ng-show="(articles | filter:userInput).length == 0"><em>No articles found.</em></p>
 
