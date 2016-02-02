@@ -4,9 +4,9 @@
 
 describe('my app', function() {
 
-  browser.get('index.html');
 
   it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+    browser.get('index.html');
     expect(browser.getLocationAbsUrl()).toMatch("/view1");
   });
 
@@ -17,11 +17,18 @@ describe('my app', function() {
       browser.get('index.html#/view1');
     });
 
+
+    it('should render view1 when user navigates to /view1', function() {
+      expect(element.all(by.css('[ng-view] h3')).first().getText()).
+        toMatch(/Articles/);
+    });
+
     it('reduces the list of articles as the user enters a search term', function() {
       expect(element.all(by.css('.articles li')).count()).toBeGreaterThan(1);
-      element(by.css('[ng-model="userInput"]')).sendKeys('Holmes');
+      element(by.css('[ng-model="userInput.authors"]')).sendKeys('Holmes');
       expect(element.all(by.css('.articles li')).count()).toBe(1);
     });
+
 
   });
 
